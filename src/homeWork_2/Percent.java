@@ -1,3 +1,5 @@
+package homeWork_2;
+
 public class Percent {
     public static void main(String[] args){
         int money = 20000;

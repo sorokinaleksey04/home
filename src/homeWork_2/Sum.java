@@ -1,3 +1,5 @@
+package homeWork_2;
+
 public class Sum {
     public static void main(String[] args){
         int count = 0;
