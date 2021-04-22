@@ -8,19 +8,15 @@ import java.util.Scanner;
 public class StringRun{
 
     public static void main(String[] args) {
-        String[] arStr = new String[]{"1","2","4","5"};
 
-        List<String> stringList = new ArrayList<String>();
+        String[] mass = new String[]{"1","2","3","4","5","6","7","8","9","10"};
 
-        stringList = Arrays.asList(arStr);
-        for (String s : stringList){
-            System.out.println(s);
-        }
-        //stringList.add
-
-
-
-
+        CollectionString cs = new CollectionString();
+        //cs.addIndex(mass,6,"вставка по индексу");
+        //cs.addValue(mass, "вставка по значению");
+        //cs.deleteIndex(mass,5);
+        //cs.deleteValue(mass,"8");
+        cs.getIndex(mass,0);
 
     }
 }
