@@ -44,7 +44,7 @@ public class ImplementArrayList<Obj>{
             return true;
     }
 
-    public void deleteObj (Object obj){
+    /*public void deleteObj (Object obj){
             int index = 0;
         Object[] temp = new Object[mass.length - 1];
         for (int i = 0; i < mass.length; i ++) {
@@ -57,6 +57,19 @@ public class ImplementArrayList<Obj>{
             System.arraycopy(mass,0,temp,0,index);
             System.arraycopy(mass,index +1, temp, index,mass.length - index - 1);
         }
+
+    }*/
+
+    public void deleteObj (Object obj){
+        int index = 0;
+        Object[] temp = new Object[mass.length];
+        for (int i = 0; i < mass.length; i ++) {
+            if (mass[i] == obj){
+               index = i;
+            }
+
+        }
+            System.arraycopy(mass,index + 1, mass, index,mass.length - index - 1);
 
     }
 
@@ -84,33 +97,37 @@ public class ImplementArrayList<Obj>{
     }
 
     boolean clear(){
-            for (int i = 0; i < mass.length; i++){
-                mass[i] = null;
-            }
-            return true;
+        Object[] newMass = new  Object[mass.length];
+        System.arraycopy(newMass,0,mass,0,newMass.length);
+            elementCount = 0;
+        return true;
     }
 
     int size(){
-            int count = 0;
             for (int i = 0; i < mass.length; i++){
-                count++;
+                elementCount++;
             }
-            return count;
+            return elementCount;
     }
 
     public static void main(String[] args) {
        ImplementArrayList<String> impStr = new ImplementArrayList<>();
-       impStr.addObg("добавили");
+       impStr.addObg("добавили1");
+        impStr.addObg("добавили2");
+        impStr.addObg("добавили3");
+        impStr.addObg("добавили4");
+        impStr.addObg("добавили5");
        //impStr.addIndex(1, "добавили2");
-       impStr.deleteObj("добавили");
-       System.out.println(impStr.get(0));
-      // System.out.println(impStr.get(1));
+       impStr.deleteObj("добавили3");
+       //System.out.println(impStr.get(2));
+       //System.out.println(impStr.get(1));
         //System.out.println(impStr.contain("добавили"));
-       // impStr.clear();
+        //impStr.clear();
         //System.out.println(impStr.get(0));
         //System.out.println(impStr.get(1));
-        //System.out.println(impStr.size());
+        System.out.println(impStr.size());
         //System.out.println(impStr.get(0).equals(impStr.get(1)));
+        System.out.println(Arrays.deepToString(impStr.mass));
         }
     }
 
