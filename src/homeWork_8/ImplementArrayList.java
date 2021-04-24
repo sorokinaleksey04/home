@@ -44,22 +44,6 @@ public class ImplementArrayList<Obj>{
             return true;
     }
 
-    /*public void deleteObj (Object obj){
-            int index = 0;
-        Object[] temp = new Object[mass.length - 1];
-        for (int i = 0; i < mass.length; i ++) {
-            if (mass[i].equals(obj)){
-                index = i;
-                //System.out.println(index);
-            }
-        }
-        for (int j = index; j < mass.length - 1; j++) {
-            System.arraycopy(mass,0,temp,0,index);
-            System.arraycopy(mass,index +1, temp, index,mass.length - index - 1);
-        }
-
-    }*/
-
     public void deleteObj (Object obj){
         int index = 0;
         Object[] temp = new Object[mass.length];
